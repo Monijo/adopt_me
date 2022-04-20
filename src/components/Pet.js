@@ -1,5 +1,3 @@
-import React from "react";
-
 function Pet({ name, animal, breed }) {
   return (
     <div>
