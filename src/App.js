@@ -1,20 +1,14 @@
 import React from "react";
 import Pet from "./components/Pet";
 
-export default function App() {
-  return React.createElement(
-    "div",
-    {},
-    React.createElement("h1", {}, "Adopt Me!"),
-    React.createElement(Pet, {
-      name: "Luna",
-      animal: "dog",
-      breed: "Havanese",
-    }),
-    React.createElement(Pet, {
-      name: "Pepper",
-      animal: "Bird",
-      breed: "Cockatiel",
-    })
+function App() {
+  return (
+    <div>
+      <h1>"Adopt me</h1>
+      <Pet name="Luna" animal="Dog" breed="Havanese" />
+      <Pet name="Pepper" animal="Bird" breed="Cockatiel" />
+    </div>
   );
 }
+
+export default App;
