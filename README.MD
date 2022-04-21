@@ -6,6 +6,8 @@
 -Prettier - code formatter [Link](https://www.npmjs.com/package/prettier)
 -Linter(ESLint) - static code analyzer with guideline(Airbnb) [Link](https://www.npmjs.com/package/eslint)
 -Module Bundler (Webpack, Parcel)
+-StoryBook - 
+-State managment library -(Flux, Redux, Mobx)
 
 ## Snippets
 
