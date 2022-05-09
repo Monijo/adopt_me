@@ -1,12 +1,20 @@
-import Pet from "./components/Pet";
 import SearchParams from "./components/SearchParams";
+
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
+import WrappedDetails from "./components/Details";
 
 function App() {
   return (
-    <div>
-      <h1>Adopt me</h1>
-      <SearchParams />
-    </div>
+    <BrowserRouter>
+      <Link to="/">
+        <h1>Adopt me</h1>
+      </Link>
+      <Routes>
+        <Route path="/" element={<SearchParams />} />
+        <Route path="/details/:id" element={<WrappedDetails />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
