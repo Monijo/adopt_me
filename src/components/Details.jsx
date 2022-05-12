@@ -24,7 +24,7 @@ class Details extends React.Component {
 
     const { name, city, description, animal, breed, state, images } =
       this.state;
-
+    throw new Error("sorry..");
     return (
       <div className="details">
         <div>
