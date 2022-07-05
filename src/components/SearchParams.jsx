@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import useBreedList from "../hooks/useBreedList";
 import Results from "./Results";
+import ThemeContext from "./ThemeContext";
 
 const animals = ["bird", "cat", "dog", "rabbit", "reptile"];
 
@@ -10,6 +11,8 @@ function SearchParams() {
   const [breed, setBreed] = useState("");
   const [pets, setPets] = useState([]);
   const [breeds] = useBreedList(animal);
+
+  const [theme, setTheme] = useContext(ThemeContext);
 
   useEffect(() => {
     requestPets().catch(() => {});
@@ -80,8 +83,25 @@ function SearchParams() {
             </option>
           ))}
         </select>
+        <label htmlFor="theme">Choose theme:</label>
+        <select
+          id="theme"
+          value={theme}
+          onChange={(e) => {
+            setTheme(e.target.value);
+          }}
+          onBlur={(e) => {
+            setTheme(e.target.value);
+          }}
+        >
+          <option value="peru">Peru</option>
+          <option value="grey">Grey</option>
+          <option value="green">Green</option>
+        </select>
 
-        <button type="submit">Submit</button>
+        <button type="submit" style={{ backgroundColor: theme }}>
+          Submit
+        </button>
       </form>
 
       <Results pets={pets} />
