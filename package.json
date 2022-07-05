@@ -8,7 +8,7 @@
     "lint": "eslint \"src/**/*.{js, jsx}\" --quiet",
     "dev": "parcel src/index.html",
     "test": "jest --env=jsdom",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch --env=jsdom"
   },
   "repository": {
     "type": "git",
