@@ -24,3 +24,31 @@ test("gives an empty list with no animal", async () => {
   expect(breedList).toHaveLength(0);
   expect(status).toBe("unloaded");
 });
+
+test("gives back breeds with an animal", async () => {
+  const breeds = [
+    "Havanese",
+    "Bichon Frise",
+    "Poodle",
+    "Maltese",
+    "Golden Retriever",
+    "Labrador",
+    "Husky",
+  ];
+
+  fetch.mockResponseOnce(
+    JSON.stringify({
+      aniaml: "dog",
+      breeds,
+    })
+  );
+
+  let result = await act(() => {
+    const { result } = renderHook(() => useBreedList("dog"));
+    return result;
+  });
+
+  const [breedList, status] = result.current;
+  expect(status).toBe("loaded");
+  expect(breedList).toEqual(breeds);
+});
