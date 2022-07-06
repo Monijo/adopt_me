@@ -19,7 +19,7 @@ class Carousel extends Component {
 
     return (
       <div className="carousel">
-        <img src={images[active]} alt="animal" data-testid="hero" />
+        <img src={images[active]} alt="animal" data-testid="thumbnail" />
         <div className="carousel-smaller">
           {images.map((image, idx) => (
             <img
